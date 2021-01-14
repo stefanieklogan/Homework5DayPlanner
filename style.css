@@ -70,7 +70,7 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
-.row, .col {
+.col {
   border-top: 1px solid navy;
   border-left: 1px solid navy;
   border-right: 1px solid navy;

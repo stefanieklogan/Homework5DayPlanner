@@ -49,7 +49,7 @@ function renderCal(createRow) {
     $(".container").append(row);
 
     var hourCol = $("<div>");
-    hourCol.addClass("col col-2 hour row time-block ml-2");
+    hourCol.addClass("col col-2 justify-content-center hour row time-block ml-2 py-4");
     hourCol.text(hour[i]);
     $(".row1").append(hourCol);
     console.log("run");
@@ -59,7 +59,7 @@ function renderCal(createRow) {
     $(".row1").append(descCol);
 
     var saveCol = $("<div>");
-    saveCol.addClass("col col-2 hour save row time-block ml-3");
+    saveCol.addClass("col col-2 justify-content-center hour save row time-block ml-3");
     $(".row1").append(saveCol);
 }}
 
@@ -72,6 +72,8 @@ function renderSave() {
     $(".save").append(saveBtn);
 }
 renderSave();
+
+function bgColor() {};
       });
     
 </script>

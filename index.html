@@ -21,32 +21,8 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container" id="container">
-      <!-- Timeblocks go here -->
-      
-      <!-- <div class="row">
-        <div class="col col-2">
-          Hour
-        </div>
-        <div class="col col-8">
-          Appointment
-        </div>
-        <div class="col col-2">
-          Save
-        </div>
-      </div> -->
-
-      <!-- <div class="row">
-        <div class="col col-2">
-          Hour
-        </div>
-        <div class="col col-8">
-          Appointment
-        </div>
-        <div class="col col-2">
-          Save
-        </div>
-      </div> -->
+    <div class="container">
+    
       
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -57,24 +33,37 @@
       $(document).ready(function() {
 
 //Creating calendar hours
-var hour = ["8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM"];
+var hour = ["8 AM"];
+// "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM", "7 PM", "8 PM"];
 
 //Listing today's date in header
         var nowHead = moment().format('MMMM Do, YYYY');
         $("#currentDay").text(nowHead);
 
 // Create day view of calendar & for-loop to iterate through the time array.
-  for (var i = 0; i < hour.length; i++) {
-    var hourRow = $("<div>");
-    hourRow.addClass("col col-2 hour row time-block");
-    hourRow.text(hour[i]);
-    $("#container").append(hourRow);
 
-    // var descRow = $("<input>");
-    // descRow.addClass("col col-8 row description");
-    // $("#hourRow").appendChild(descRow);
-}
+function renderCal(createRow) {
+  for (var i = 0; i < hour.length; i++) {  
+    var row = $("<div>");
+    row.addClass("row row1 time-block");
+    $(".container").append(row);
 
+    var hourCol = $("<div>");
+    hourCol.addClass("col col-2 hour row time-block ml-2");
+    hourCol.text(hour[i]);
+    $(".row").append(hourCol);
+    console.log("run");
+
+    // var descCol = $("<input>");
+    // descCol.addClass("col col-8 hour row time-block");
+    // $(".row").append(descCol);
+
+    // var saveCol = $("<div>");
+    //   saveCol.addClass("col col-2 hour row time-block");
+    //   $(".row").append(saveCol);
+}}
+
+renderCal();
       });
     
 </script>

@@ -28,32 +28,34 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="library/moment.min.js"></script>
-    <script src="script.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function() {
 
-//Creating calendar hours
-var hour = ["8 AM", "9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"];
-
 //Listing today's date in header
-        var nowHead = moment().format('MMMM Do, YYYY');
-        $("#currentDay").text(nowHead);
+  var nowHead = moment().format('MMMM Do, YYYY');
+  $("#currentDay").text(nowHead);
+    
+//Creating calendar hours
+var hourArr = [
+ {hour: "2 PM", military: 14},
+ {hour: "3 PM", military: 15}
+];  
 
 // Create day view of calendar & for-loop to iterate through the time array.
 
 function renderCal(createRow) {
-  for (var i = 0; i < hour.length; i++) {  
+  for (var i = 0; i < hourArr.length; i++) {  
     var row = $("<div>");
     row.addClass("row row1 time-block");
-    row.attr("data-time", hour[i]);
+    row.attr("time-military", hourArr[i].military);
+    row.attr("time-hour", hourArr[i].hour)
     $(".container").append(row);
 
     var hourCol = $("<div>");
     hourCol.addClass("col col-2 justify-content-center hour row time-block ml-2 py-4");
-    hourCol.text($(row).attr("data-time"));
+    hourCol.text($(row).attr("time-hour"));
     $(".row1").append(hourCol);
-    console.log("run");
 
     var descCol = $("<input>");
     descCol.addClass("col col-8 hour row time-block ml-3");
@@ -74,38 +76,16 @@ function renderSave() {
 }
 renderSave();
 
-//Change textarea background color based on time
-var checkTime = function () {
+// //Change textarea background color based on time/////////////////////////////////
+//   var checkTime = function () {
 
-//Get Current time
-var currentTime = moment().format('H');
+//   //Get Current time
+//   var currentTime = moment().format('H');
+//   console.log(currentTime + " / " + "arrMilitaryHERE");
 
-//get all elements with class "taskarea"
-var timeBlockEl = $(".textarea");
 
-//loop through taskarea classes
-for (var i = 0 ; i < timeBlockElements.length ; i++) {
-
-    //Get element i's ID as a string
-    var elementID = timeBlockElements[i].id;
-
-    //get element by ID
-    var manipID = document.getElementById(timeBlockElements[i].id)
-
-    //remove any old classes from element
-    $(timeBlockElements[i].id).removeClass(".present .past .future");
-
-    // apply new class if task is present/past/future
-    if (elementID < currentTime) {
-        $(manipID).addClass("past");
-    } else if (elementID > currentTime) {
-        $(manipID).addClass("future");
-    } else {
-        $(manipID).addClass("present");
-    }
-}
-}
-
+// }
+// checkTime();
   //////////////////////////////////////////
       });
     

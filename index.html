@@ -38,9 +38,17 @@
     
 //Creating calendar hours
 var hourArr = [
+//  {hour: "8 AM", military: 8},
+//  {hour: "9 AM", military: 9},
+//  {hour: "10 AM", military: 10},
+//  {hour: "11 AM", military: 11},
+//  {hour: "12 PM", military: 12},
  {hour: "1 PM", military: 13},
  {hour: "2 PM", military: 14},
- {hour: "3 PM", military: 15}
+ {hour: "3 PM", military: 15},
+ {hour: "4 PM", military: 16},
+ {hour: "5 PM", military: 17},
+ {hour: "6 PM", military: 18},
 ];  
 
 // Create day view of calendar & for-loop to iterate through the time array.
@@ -79,16 +87,24 @@ function renderSaveBtn() {
 renderSaveBtn();
 
 // //Change textarea background color based on time/////////////////////////////////
-  var checkTime = function () {
+  var pastPresentFuture = function () {
   var currentTime = (moment().format('H'));
 
   for (var i = 0; i < hourArr.length; i++) {
-  var militaryID = hourArr[i].military
-  console.log(currentTime);
-  console.log(militaryID);
+  var militaryID = hourArr[i].military;
+  militaryNum = parseInt(militaryID);
+  timeNum = parseInt(currentTime);
+  console.log(timeNum + " / " + militaryNum);
 
-  if (militaryID === currentTime)  {
-    console.log("winner");
+  if (militaryNum < timeNum)  {
+    console.log("past");
+    hourArr[i].time-hour.addClass("past");
+  }
+  else if (militaryNum === timeNum ) {
+    console.log("present");
+  }
+  else {
+    console.log("future");
   }
 };
   
@@ -101,7 +117,7 @@ renderSaveBtn();
   // }
   };
 
-checkTime();
+pastPresentFuture();
   //////////////////////////////////////////
       });
     

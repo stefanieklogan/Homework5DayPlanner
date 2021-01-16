@@ -38,6 +38,7 @@
     
 //Creating calendar hours
 var hourArr = [
+ {hour: "1 PM", military: 13},
  {hour: "2 PM", military: 14},
  {hour: "3 PM", military: 15}
 ];  
@@ -48,8 +49,8 @@ function renderCal(createRow) {
   for (var i = 0; i < hourArr.length; i++) {  
     var row = $("<div>");
     row.addClass("row row1 time-block");
-    row.attr("time-military", hourArr[i].military);
     row.attr("time-hour", hourArr[i].hour)
+    row.attr("id", hourArr[i].military);
     $(".container").append(row);
 
     var hourCol = $("<div>");
@@ -68,24 +69,39 @@ function renderCal(createRow) {
 
 renderCal();
 
-function renderSave() {
+function renderSaveBtn() {
   var saveBtn = $("<button>");
     saveBtn.addClass("btn btn-primary my-2 mx-2");
     saveBtn.text("Save");
     $(".save").append(saveBtn);
 }
-renderSave();
+
+renderSaveBtn();
 
 // //Change textarea background color based on time/////////////////////////////////
-//   var checkTime = function () {
+  var checkTime = function () {
+  var currentTime = (moment().format('H'));
 
-//   //Get Current time
-//   var currentTime = moment().format('H');
-//   console.log(currentTime + " / " + "arrMilitaryHERE");
+  for (var i = 0; i < hourArr.length; i++) {
+  var militaryID = hourArr[i].military
+  console.log(currentTime);
+  console.log(militaryID);
 
+  if (militaryID === currentTime)  {
+    console.log("winner");
+  }
+};
+  
+  // for (var i = 0; i < hourArr.length; i++) {
+    
+  //   if (currentTime !== hourArr[i].military) {
+  //     console.log(currentTime + " / " + hourArr[i].military);
+  //     row.addClass("present");
+  //   }
+  // }
+  };
 
-// }
-// checkTime();
+checkTime();
   //////////////////////////////////////////
       });
     

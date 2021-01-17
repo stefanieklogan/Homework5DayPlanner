@@ -95,13 +95,15 @@ var pastPresentFuture = function () {
 
   for (var i = 0; i < hourArr.length; i++) {
   var militaryID = hourArr[i].military;
+  console.log(militaryID);
   
   militaryNum = parseInt(militaryID);
   timeNum = parseInt(currentTime);
   console.log(timeNum + " / " + militaryNum);
 
   if (militaryNum < timeNum)  {
-    $("hourArr[i].military input").addClass("past");
+    $("#" + militaryID).addClass("past");
+    console.log(militaryID);
     console.log("past");
   }
   else if (militaryNum === timeNum ) {

@@ -42,16 +42,16 @@ var hourArr = [
 //  {hour: "9 AM", military: 9},
 //  {hour: "10 AM", military: 10},
 //  {hour: "11 AM", military: 11},
-//  {hour: "12 PM", military: 12},
-//  {hour: "1 PM", military: 13},
-//  {hour: "2 PM", military: 14},
-//  {hour: "3 PM", military: 15},
-//  {hour: "4 PM", military: 16},
- {hour: "5 PM", military: 17},
- {hour: "6 PM", military: 18},
- {hour: "7 PM", military: 19},
- {hour: "8 PM", military: 20},
- {hour: "9 PM", military: 21},
+ {hour: "12 PM", military: 12},
+ {hour: "1 PM", military: 13},
+ {hour: "2 PM", military: 14},
+ {hour: "3 PM", military: 15},
+ {hour: "4 PM", military: 16},
+//  {hour: "5 PM", military: 17},
+//  {hour: "6 PM", military: 18},
+//  {hour: "7 PM", military: 19},
+//  {hour: "8 PM", military: 20},
+//  {hour: "9 PM", military: 21},
 ];  
 
 // Create day view of calendar & for-loop to iterate through the time array.
@@ -70,7 +70,7 @@ function renderCal(createRow) {
     $(".row1").append(hourCol);
 
     var descCol = $("<input>");
-    descCol.addClass("col col-8 hour row time-block ml-3");
+    descCol.addClass("col col-8 input hour row time-block ml-3");
     $(".row1").append(descCol);
 
     var saveCol = $("<div>");
@@ -90,7 +90,7 @@ function renderSaveBtn() {
 renderSaveBtn();
 
 // //Change <input> background color based on time/////////////////////////////////
-  var pastPresentFuture = function () {
+var pastPresentFuture = function () {
   var currentTime = (moment().format('H'));
 
   for (var i = 0; i < hourArr.length; i++) {
@@ -101,13 +101,8 @@ renderSaveBtn();
   console.log(timeNum + " / " + militaryNum);
 
   if (militaryNum < timeNum)  {
-    var index = hourArr[i].military;
-    console.log(index);
-    var targetRow = $("#17 input");
-    console.log(targetRow);
-    targetRow.addClass("past");
-    console.log("past ADDED");
-    // hourArr[i].time-hour.addClass("past");
+    $("hourArr[i].military input").addClass("past");
+    console.log("past");
   }
   else if (militaryNum === timeNum ) {
     console.log("present");

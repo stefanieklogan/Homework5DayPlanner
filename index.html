@@ -99,18 +99,18 @@ var pastPresentFuture = function () {
   
   militaryNum = parseInt(militaryID);
   timeNum = parseInt(currentTime);
-  console.log(timeNum + " / " + militaryNum);
+  
 
   if (militaryNum < timeNum)  {
-    $("#" + militaryID).addClass("past");
-    console.log(militaryID);
-    console.log("past");
+    $("#" + militaryID).children("input").addClass("past");
   }
+
   else if (militaryNum === timeNum ) {
-    console.log("present");
+    $("#" + militaryID).children("input").addClass("present");
   }
+
   else {
-    console.log("future");
+    $("#" + militaryID).children("input").addClass("future");
   }
 };
   

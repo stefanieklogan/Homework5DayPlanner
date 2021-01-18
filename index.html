@@ -42,16 +42,13 @@ var hourArr = [
 //  {hour: "9 AM", military: 9},
 //  {hour: "10 AM", military: 10},
 //  {hour: "11 AM", military: 11},
- {hour: "12 PM", military: 12},
+//  {hour: "12 PM", military: 12},
  {hour: "1 PM", military: 13},
  {hour: "2 PM", military: 14},
- {hour: "3 PM", military: 15},
- {hour: "4 PM", military: 16},
+//  {hour: "3 PM", military: 15},
+//  {hour: "4 PM", military: 16},
 //  {hour: "5 PM", military: 17},
 //  {hour: "6 PM", military: 18},
-//  {hour: "7 PM", military: 19},
-//  {hour: "8 PM", military: 20},
-//  {hour: "9 PM", military: 21},
 ];  
 
 // Create day view of calendar & for-loop to iterate through the time array.
@@ -69,9 +66,10 @@ function renderCal(createRow) {
     hourCol.text($(row).attr("time-hour"));
     $(".row1").append(hourCol);
 
-    var descCol = $("<input>");
-    descCol.addClass("col col-8 input hour row time-block ml-3");
-    $(".row1").append(descCol);
+    var inputCol = $("<input>");
+    inputCol.addClass("col col-8 input hour row time-block ml-3");
+    inputCol.attr("input-key", hourArr[i].military);
+    $(".row1").append(inputCol);
 
     var saveCol = $("<div>");
     saveCol.addClass("col col-2 justify-content-center hour save row time-block ml-3");
@@ -85,6 +83,11 @@ function renderSaveBtn() {
     saveBtn.addClass("btn btn-primary my-2 mx-2");
     saveBtn.text("Save");
     $(".save").append(saveBtn);
+
+    var saveBtnTest = $("<button>");
+      saveBtnTest.addClass("saveBtnTest btn btn-primary my-2 mx-2");
+      saveBtnTest.text("Save");
+      $(".jumbotron").append(saveBtnTest);
 }
 
 renderSaveBtn();
@@ -95,12 +98,11 @@ var pastPresentFuture = function () {
 
   for (var i = 0; i < hourArr.length; i++) {
   var militaryID = hourArr[i].military;
-  console.log(militaryID);
   
+  //Ensuring both var are num
   militaryNum = parseInt(militaryID);
   timeNum = parseInt(currentTime);
   
-
   if (militaryNum < timeNum)  {
     $("#" + militaryID).children("input").addClass("past");
   }
@@ -117,6 +119,34 @@ var pastPresentFuture = function () {
   };
 
 pastPresentFuture();
+
+//input, saveBtn, localStorage //////////////////////////////////////////////////////
+var apptArr = [];
+
+function init () {
+  var storedAppt = JSON.parse(localStorage.getItem("apptArr"));
+  if (storedAppt !== null) {
+    storedAppt = apptArr;
+  }
+  console.log("ready to render");
+  // renderAppt();
+}
+
+$(".saveBtnTest").on("click", function() {
+    var inputArr = {
+    apptHr: $(".input").attr("input-key"),
+    appt: $(".input").val()
+  }
+
+    apptArr.push(inputArr);
+    console.log(apptArr);
+    storeAppt();
+  });
+function storeAppt() {
+  localStorage.setItem("apptArr", JSON.stringify(apptArr));
+}
+//localStorage//////////////////////////////////////////////////////
+
   //////////////////////////////////////////
       });
     

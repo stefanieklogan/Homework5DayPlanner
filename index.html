@@ -41,7 +41,7 @@ var hourArr = [
 //  {hour: "8 AM", military: 8},
 //  {hour: "9 AM", military: 9},
 //  {hour: "10 AM", military: 10},
- {hour: "11 AM", military: 11},
+ {hour: "11 AM", military: 11,},
  {hour: "12 PM", military: 12},
  {hour: "1 PM", military: 13},
  {hour: "2 PM", military: 14},
@@ -74,6 +74,9 @@ function renderCal() {
     var saveCol = $("<div>");
     saveCol.addClass("col col-2 justify-content-center hour save row time-block ml-3");
     $(row).append(saveCol);
+
+    localStorage.setItem("hourArr", JSON.stringify(hourArr));
+
 }}
 
 renderCal();
@@ -123,14 +126,19 @@ function init () {
   if (storedAppt !== null) {
     storedAppt = apptArr;
   }
-  console.log("ready to render");
   render();
 }
 
 function render () {
 $(".input").each(function() {
   var currentInput = $(this).attr("input-key");
-  console.log(currentInput);
+  var currentText = $(this).text();
+
+//PSUEDO CODE ///
+//Take apptArr.apptHour.value and find the ID that matches.
+//Display value of the appointment key from 
+//apptArr in child of the parent row w matching ID
+
 })
 }
 

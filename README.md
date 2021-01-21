@@ -6,7 +6,7 @@
 3. [ Psuedo Code. ](#psuedo)
 4. [ Building the code & Java. ](#code)
 5. [ Proud. ](#proud)
-6. [ Additional learnings. ](#learnings)
+6. [ Future state. ](#future)
 7. [ The other stuff: License & Badges. ](#streetcred)
 
 
@@ -21,20 +21,19 @@
 ## Project overview
 
 * The main focus of this project required a demonstration of understanding JQuery. A user visits this page and is able to:
-* See today's date inside the heading
-* See hours 8 AM - 6 PM
-* Add/delete text to each hour/appointment slot
-
+** See today's date inside the heading
+** See hours 8 AM - 5 PM
+** Add/delete text to each hour/appointment slot
 
 <a name="psuedo"></a>
 ## Psuedo code
 
-* I did some psuedo coding when it came to the layout. I started by proving to myself that I knew what html would be needed as an end product - one row with three columns x total hours. I then worked with jQuery to build the code and had to debug quite a bit before finally landing on working code. Parent/child relationships were key in this part of the assignment.
+* I did some psuedo coding when it came to the layout. I started by writing the html - one row with three columns x total hours. I then worked with jQuery to build the code and had to debug quite a bit before finally landing on working code. Parent/child relationships were key in this part of the assignment.
 
 <a name="code"></a>
-## Building the code & Java
+## Building the code & JQuery
 
-* Is there a world record for the highest # of var in a js file? My biggest file to-date and probably only a fraction of the code I'll be writing 30 days from now. I am still working on writing small snippets of code, testing, committing and moving on. I find I'll write 5-10 lines and then debug for awhile.
+* The two most challenging portions of the page were 1) past/present/future code and 2) save & display with array in LS. DOM traversal understanding was required.
 
 <a name="proud"></a>
 ## What I'm proud of most
@@ -43,17 +42,13 @@
 
 * I appreciate the reduced amount of formatting this assignment needed. Instead, my focus was the backend and functionality built where the eye cannot see.
 
-* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+<a name="future"></a>
+## Future state
 
-<a name="learnings"></a>
-## Additional learnings
-
-* You should be coding.
-* You should be coding.
-* You should be coding.
-* You get out of this camp what you put in.
-* You should be coding.
-
+* With more time I plan to add: 
+** Validation against null input field
+** "I'm going on vacation, clear my calendar" button
+** Code that clears LS if savedAppt are in the past
 
 <a name="streetcred"></a>
 ## The other stuff: License & Badges

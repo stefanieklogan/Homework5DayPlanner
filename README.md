@@ -21,11 +21,11 @@
 ## Project overview
 
 * The main focus of this project required a demonstration of understanding JQuery. A user visits this page and is able to:
-** See today's date inside the heading
-** See hours 8 AM - 5 PM
-** Add/delete text to each appointment slot
-** Save individual appointments
-** Refresh page and appointments persist
+    * See today's date inside the heading
+    * See hours 8 AM - 5 PM
+    * Add/delete text to each appointment slot
+    * Save individual appointments
+    * Refresh page and appointments persist
 
 <a name="psuedo"></a>
 ## Psuedo code

@@ -26,6 +26,7 @@
     * Add/delete text to each appointment slot
     * Save individual appointments
     * Refresh page and appointments persist
+    * Visually tell (thru color) what hours are past/present/future
 
 <a name="psuedo"></a>
 ## Psuedo code

@@ -48,6 +48,8 @@
 
 * Line 100 of my script.js was probably the most eye-opening. My mind knew what was needed but I had yet to use/interact with .eq and _ in code. I'd scoured internet sites and articles but I wasn't searching for the right information. Partnering with a peer helped bring together what I'd not yet known how to-do.
 
+![JS code image](https://github.com/stefanieklogan/Homework5DayPlanner/blob/main/assets/Photos/line100.JPG)
+
 <a name="future"></a>
 ## Future state
 

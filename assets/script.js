@@ -2,7 +2,7 @@
       var nowHead = moment().format('MMMM Do, YYYY');
       $("#currentDay").text(nowHead);
         
-    //Creating calendar hours
+    //Creating calendar hours, military hour for referencing & storage for appt
     var hourArr = [
      {hour: "8 AM", military: 8, appt:""},
      {hour: "9 AM", military: 9, appt:""},
@@ -18,7 +18,6 @@
     
     
     // Create day view of calendar & for-loop to iterate through the time array.
-    
     function renderCal() {
       for (var i = 0; i < hourArr.length; i++) {  
     //create div for each row
@@ -95,7 +94,7 @@
       console.log(hourArr);
     }
     
-    //from LS, display existing appts in <input> element for correct hr
+    //from LS, display existing appt in <input> element for correct hr. Subtract 8 so military hr = index
     function displayAppt() {
       hourArr.forEach(function (_thisHour) {
         $(".input").eq(_thisHour.military-8).val(_thisHour.appt);
@@ -113,7 +112,7 @@
       displayAppt();
     }
     
-    //saveBtn click event focusing on arr ID & input >>> append to hourArr
+    //saveBtn click event focusing on arr ID & input >>> append to hourArr. Subtract 8 so military hr = index
     $(".saveBtn").on("click", function(event) {
       event.preventDefault();
       var apptHour = $(this).parent().parent().attr("id");

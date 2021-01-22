@@ -42,6 +42,8 @@
 
 * I appreciate the reduced amount of formatting this assignment needed. Instead, my focus was the backend and functionality built where the eye cannot see.
 
+* Line 100 of my script.js was probably the most eye-opening. My mind knew what was needed but I had yet to use/interact with .eq and _ in code. Partnering with a peer helped bring together what I'd not yet known how to-do.
+
 <a name="future"></a>
 ## Future state
 

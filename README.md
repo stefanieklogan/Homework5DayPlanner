@@ -15,7 +15,7 @@
 
 * Click here: https://stefanieklogan.github.io/Homework5DayPlanner/
 
-![Homepage image](https://github.com/stefanieklogan/Homework5DayPlanner/blob/main/assets/homepage.JPG)
+![Homepage image](https://github.com/stefanieklogan/Homework5DayPlanner/blob/main/assets/photos/homepage.JPG)
 
 <a name="overview"></a>
 ## Project overview

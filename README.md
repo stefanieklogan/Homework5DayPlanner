@@ -15,7 +15,7 @@
 
 * Click here: https://stefanieklogan.github.io/Homework5DayPlanner/
 
-![Homepage image](xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+![Homepage image](https://github.com/stefanieklogan/Homework5DayPlanner/blob/main/assets/homepage.JPG)
 
 <a name="overview"></a>
 ## Project overview
@@ -23,7 +23,9 @@
 * The main focus of this project required a demonstration of understanding JQuery. A user visits this page and is able to:
 ** See today's date inside the heading
 ** See hours 8 AM - 5 PM
-** Add/delete text to each hour/appointment slot
+** Add/delete text to each appointment slot
+** Save individual appointments
+** Refresh page and appointments persist
 
 <a name="psuedo"></a>
 ## Psuedo code
@@ -33,16 +35,18 @@
 <a name="code"></a>
 ## Building the code & JQuery
 
-* The two most challenging portions of the page were 1) past/present/future code and 2) save & display with array in LS. DOM traversal understanding was required.
+* The two most challenging portions of the page were:
+    * past/present/future code
+    * display appointment from lS in the right hour column
 
 <a name="proud"></a>
 ## What I'm proud of most
 
-* I am so proud of myself for being able to write the html needed and then working with jQuery to get to the same result. I am also proud of myself for figuring out the hourArr and putting a relationship between 3 PM & 15 to solve for assignment requirements. 
+* I am so proud of myself for being able to write the html needed and then working with jQuery to get to the same result. I am also proud of myself for establishing one array to keep track of data vs splitting them apart. I'm proud of establishing a relationship between 3 PM & 15 to solve for several assignment requirements.
 
 * I appreciate the reduced amount of formatting this assignment needed. Instead, my focus was the backend and functionality built where the eye cannot see.
 
-* Line 100 of my script.js was probably the most eye-opening. My mind knew what was needed but I had yet to use/interact with .eq and _ in code. Partnering with a peer helped bring together what I'd not yet known how to-do.
+* Line 100 of my script.js was probably the most eye-opening. My mind knew what was needed but I had yet to use/interact with .eq and _ in code. I'd scoured internet sites and articles but I wasn't searching for the right information. Partnering with a peer helped bring together what I'd not yet known how to-do.
 
 <a name="future"></a>
 ## Future state

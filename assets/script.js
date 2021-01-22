@@ -4,11 +4,11 @@
         
     //Creating calendar hours
     var hourArr = [
-    //  {hour: "8 AM", military: 8, appt:""},
-    //  {hour: "9 AM", military: 9, appt:""},
-    //  {hour: "10 AM", military: 10, appt:""},
-    //  {hour: "11 AM", military: 11, appt:""},
-    //  {hour: "12 PM", military: 12, appt:""},
+     {hour: "8 AM", military: 8, appt:""},
+     {hour: "9 AM", military: 9, appt:""},
+     {hour: "10 AM", military: 10, appt:""},
+     {hour: "11 AM", military: 11, appt:""},
+     {hour: "12 PM", military: 12, appt:""},
      {hour: "1 PM", military: 13, appt:""},
      {hour: "2 PM", military: 14, appt:""},
      {hour: "3 PM", military: 15, appt:""},
@@ -91,24 +91,24 @@
     
     //store appt in LS
     function storeAppt() {
-      localStorage.setItem("myCal", JSON.stringify(myCal));
-      console.log(myCal);
+      localStorage.setItem("hourArr", JSON.stringify(hourArr));
+      console.log(hourArr);
     }
     
     //from LS, display existing appts in <input> element for correct hr
     function displayAppt() {
       hourArr.forEach(function (_thisHour) {
-        $(`#${_thisHour.military}`).val(_thisHour.appt);
+        $(".input").eq(_thisHour.military-8).val(_thisHour.appt);
         console.log(_thisHour.appt);
       })
     }
     
     //check LS for appt first, then call display func
     function initCal () {
-      var storedAppt = JSON.parse(localStorage.getItem("myCal"));
+      var storedAppt = JSON.parse(localStorage.getItem("hourArr"));
       console.log(storedAppt);
       if (storedAppt !== null) {
-        storedAppt = myCal;
+        hourArr = storedAppt;
       }
       displayAppt();
     }
@@ -121,8 +121,7 @@
       var apptInput = $(this).parent().siblings(".input").val();
       console.log(apptInput);
       
-      hourArr.push(apptInput);
-      // hourArr[apptHour].appt = $(this).parent().siblings("input").val();
+      hourArr[apptHour-8].appt = $(this).parent().siblings("input").val();
      
         storeAppt();
       });

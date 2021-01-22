@@ -15,7 +15,7 @@
 
 * Click here: https://stefanieklogan.github.io/Homework5DayPlanner/
 
-![Homepage image](https://github.com/stefanieklogan/Homework5DayPlanner/blob/main/assets/photos/homepage.JPG)
+![Homepage image](https://github.com/stefanieklogan/Homework5DayPlanner/blob/main/assets/Photos/homepage.JPG)
 
 <a name="overview"></a>
 ## Project overview
@@ -54,9 +54,9 @@
 ## Future state
 
 * With more time I plan to add: 
-** Validation against null input field
-** "I'm going on vacation, clear my calendar" button
-** Code that clears LS if savedAppt are in the past
+    * Validation against null input field
+    * "I'm going on vacation, clear my calendar" button
+    * Code that clears LS if savedAppt are in the past
 
 <a name="streetcred"></a>
 ## The other stuff: License & Badges
